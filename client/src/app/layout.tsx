@@ -1,14 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+const roboto = Roboto({
   subsets: ["latin"],
 });
 
@@ -24,10 +19,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={roboto.className}>
+        <Navbar
+          brandName="MyShop"
+          primaryColor="indigo"
+          secondaryColor="black"
+          mainNavItems={[
+            { name: "Home", path: "/" },
+            { name: "Shop", path: "/shop" },
+            { name: "Deals", path: "/deals" },
+          ]}
+          accountNavItems={[
+            { name: "Login", path: "/login" },
+            { name: "Wishlist", path: "/wishlist" },
+            { name: "Cart", path: "/cart", isButton: true },
+          ]}
+        />
         {children}
+        <Footer />
       </body>
     </html>
   );
