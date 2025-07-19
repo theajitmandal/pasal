@@ -5,7 +5,7 @@ export interface ICategory {
   description: string;
 }
 
-const categorySchema: Schema<ICategory> = new Schema(
+const CategorySchema: Schema<ICategory> = new Schema<ICategory>(
   {
     name: { type: String, required: true, unique: true },
     description: { type: String },
@@ -15,6 +15,8 @@ const categorySchema: Schema<ICategory> = new Schema(
   }
 );
 
-const Category = mongoose.model<ICategory>("Category", categorySchema);
-export default Category
+export default mongoose.models.Category || mongoose.model<ICategory>('Category', CategorySchema)
+
+// const Category = mongoose.model<ICategory>("Category", categorySchema);
+// export default Category
 

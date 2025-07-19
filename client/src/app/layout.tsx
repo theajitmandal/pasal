@@ -20,21 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className}>
-        <Navbar
-          brandName="MyShop"
-          primaryColor="indigo"
-          secondaryColor="black"
-          mainNavItems={[
-            { name: "Home", path: "/" },
-            { name: "Shop", path: "/shop" },
-            { name: "Deals", path: "/deals" },
-          ]}
-          accountNavItems={[
-            { name: "Login", path: "/login" },
-            { name: "Wishlist", path: "/wishlist" },
-            { name: "Cart", path: "/cart", isButton: true },
-          ]}
-        />
+        <Navbar/>
         {children}
         <Footer />
       </body>
