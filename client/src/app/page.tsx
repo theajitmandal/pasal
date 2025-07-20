@@ -1,22 +1,18 @@
 "use client";
-import Carousel from "@/components/Carousel";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import ProductList from "@/components/ProductList";
+import Slider from "@/components/Slider";
 
 export default function Home() {
   return (
     <>
-    <div>Home Page</div>
-    <Carousel           
-    imageLinks={[
-      'a.jpg',
-      'b.jpg',
-      'c.jpg',
-      'd.jpg',
-      'e.jpg',
-      'f.jpg',
+    <div>
+      <Slider/>
+      <div className="mt-24 px-24 md:px-8 lg:px-16 xl:32 2xl:px-64">
+        <h1 className="text-2xl">Featured Products</h1>
+        <ProductList/>
+      </div>
+    </div>
 
-    ]}/>
     </>
   );
 }

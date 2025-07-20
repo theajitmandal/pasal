@@ -30,7 +30,21 @@ body {
 /* from here customizing myself */
 
 @theme {
-  --color-primary: #4B0082;
-  --color-secondary: #000000;
+  /* --color-primary: #4B0082; */
+  /* --color-secondary: #000000; */
+
+  --color-main: #bfff00;
+          
+        /* primary: {
+          50: '#f0f9ff',
+          100: '#e0f2fe',
+          500: '#bfff00', 
+          900: '#1e3a8a',
+        },
+                secondary: {
+          50: '#f5f3ff',
+          500: '#8b5cf6',
+          900: '#4c1d95',
+        }, */
 }
 
