@@ -8,7 +8,7 @@ router.post('/', postCategory);
 router.get('/', showCategoryList);
 router.get('/:id', getCategoryById);
 router.put('/:id', updateCategory);
-router.put('/:id', updateCategory);
+// router.put('/:id', updateCategory);
 router.delete('/:id', deleteCategory);
 
 export default router;

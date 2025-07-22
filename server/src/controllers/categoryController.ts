@@ -74,6 +74,8 @@ export const updateCategory = async (req: Request, res: Response) : Promise<void
 // delete category
 export const deleteCategory = async (req: Request, res: Response) : Promise<void> => {
   try{
+    // findByIdAndDelete is modern, new code practice, is faster and uses deleteOne() middleware
+    // whereas findByIdAndRemove is slower, deprecated, used remove() middleware
     const deletedCategory: ICategory | null = await Category.findByIdAndDelete(req.params.id);
     if(!deletedCategory){
       res.status(404).json({ message: 'Category not found'});

@@ -1,5 +1,4 @@
 import mongoose, { Schema, Types } from "mongoose";
-const { ObjectId } = mongoose.Schema;
 
 export interface IProduct {
     name: string;
@@ -7,13 +6,13 @@ export interface IProduct {
     price: number;
     category: Types.ObjectId;
     stock: number;
-    images: string[];
-    ratings: {
-        average: number;
-        count: number;
-    };
-    createdAt: Date;
-    updatedAt: Date;
+    image: string;
+    // ratings: {
+    //     average: number;
+    //     count: number;
+    // };
+    // createdAt: Date;
+    // updatedAt: Date;
 }
 
 const ProductSchema: Schema<IProduct> = new Schema<IProduct>(
@@ -48,26 +47,26 @@ const ProductSchema: Schema<IProduct> = new Schema<IProduct>(
             required: [true, 'Product stock quantity is required'],
             min: [0, 'Stock cannot be negative'],
         },
-        images: {
-            type: [String],
+        image: {
+            type: String,
             required: [true, 'At least one product image is required'],
-            validate: {
-                validator: (images: string[]) => images.length > 0,
-                message: 'At least one product image is required',
-            },
+            // validate: {
+            //     validator: (images: string[]) => images.length > 0,
+            //     message: 'At least one product image is required',
+            // },
         },
-        ratings: {
-            average: {
-                type: Number,
-                default: 0,
-                min: [0, 'Rating must be at least 0'],
-                max: [5, 'Rating cannot exceed 5'],
-            },
-            count: {
-                type: Number,
-                default: 0,
-            },
-        },
+        // ratings: {
+        //     average: {
+        //         type: Number,
+        //         default: 0,
+        //         min: [0, 'Rating must be at least 0'],
+        //         max: [5, 'Rating cannot exceed 5'],
+        //     },
+        //     count: {
+        //         type: Number,
+        //         default: 0,
+        //     },
+        // },
     },
     {
         timestamps: true, // Adds createdAt and updatedAt automatically

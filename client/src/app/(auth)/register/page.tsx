@@ -3,7 +3,12 @@ import React from 'react'
 
 const page = () => {
   return (
-      <div>Register Page</div>
+      <>
+      <div className='m-auto'>
+        <input></input>
+      </div>
+
+      </>
   )
 }
 
