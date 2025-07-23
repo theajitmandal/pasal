@@ -18,7 +18,9 @@
     "express": "^5.1.0",
     "mongoose": "^8.16.3",
     "multer": "^2.0.2",
-    "router": "^2.2.0"
+    "router": "^2.2.0",
+    "zod": "^4.0.5",
+    "zod-validation-error": "^4.0.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.3",
